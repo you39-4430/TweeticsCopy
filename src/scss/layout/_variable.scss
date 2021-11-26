@@ -1,0 +1,94 @@
+$textLg: 32px;
+$textMd: 24px;
+$textSm: 17px;
+$space: 0.84px;
+
+$mainColor: linear-gradient(225deg, #03aadc, #3fc7c1);
+$mainColorSp: radial-gradient(farthest-side ellipse at left bottom, #3fc7c0 40%, #00a9de);
+
+@mixin contents($bg: #fff) {
+    padding: 100px 0;
+    margin: 0 auto;
+    background: $bg;
+}
+
+@mixin contentsSP($bg: #fff) {
+    padding: 50px 0;
+    margin: 0 auto;
+    background: $bg;
+}
+@mixin inner {
+    width: 960px;
+    margin: 0 auto;
+}
+@mixin innerSP {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@mixin btn($size: 19px, $width:200px, $padding:15px 0, $color:#f94691) {
+    display: block;
+    width: $width;
+    padding: $padding;
+    border-radius: 2px;
+    margin: 0 auto;
+    background-color: $color;
+    color: #fff;
+    font-size: $size;
+    font-weight: 600;
+    text-align: center;
+}
+
+@mixin title($color: #000) {
+    color: $color;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: 0.84px;
+}
+
+@mixin titleSP($color: #000) {
+    color: $color;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.84px;
+}
+
+@mixin plan($color) {
+    .p-price{
+        background-color: $color;
+    }
+    .p-plan__text {
+        font-size: 14px;
+        font-weight: 600;
+        &::before {
+            content: "";
+            display: inline-block;
+            position: relative;
+            bottom: 5px;
+            width: 12px;
+            height: 8px;
+            margin-right: 10px;
+            border-left: 2px solid $color;
+            border-bottom: 2px solid $color;
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+@mixin visited {
+    .p-plan__text {
+        color: #ddd;
+        &::before {
+            border-color: #ddd;
+        }
+    }
+}
+
+@mixin bar {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+}

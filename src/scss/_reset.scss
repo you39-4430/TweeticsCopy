@@ -1,0 +1,29 @@
+html,
+body,
+h1,
+h2,
+h3,
+p,
+a,
+ul,
+li {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+	vertical-align: bottom;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: inherit;
+}
+
+ul {
+	list-style: none;
+}

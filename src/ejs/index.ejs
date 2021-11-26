@@ -1,0 +1,463 @@
+<% 
+    var title = 'Twitter運用でお困りなら | Tweetics';
+    var link = [
+        {href: '#solution', title :'解決できること'}, 
+        {href: '#process', title :'運用代行の流れ'},
+        {href: '#review', title :'お客様の声'}, 
+        {href: '#course', title :'料金プラン'}, 
+        {href: '#flow', title :'ご利用の流れ'}, 
+        {href: '#contact', title :'お問い合わせ'}
+    ];
+    var solution =[
+        {image: 'sol_group2.png', title: 'フォロワー獲得', effect: 'ターゲットからのフォロー率UP！', text: 'アクション対象のアカウントを絞ってアプローチすることで、 ターゲットからのフォローバック率を向上することができます。'},
+        {image: 'sol_gear2.png', title: '運用工数削減', effect: '定期アクションの自動化！', text: 'いいね・RT・フォローなどのアクションを弊社独自のシステムで自動化し、Twitterアカウント運用を効率化することができます。'},
+        {image: 'sol_graph2.png', title: '分析効率化', effect: 'レポーティング資料の作成代行！', text: 'フォロワー増減推移をレポーティング資料としてご提供することができます。'}
+    ];
+    var process = [
+        {image: 'act_mail.png', title: 'お申し込み', text: '本ページ下部の<a href="#contact" class="p-scroll">お問い合わせフォーム</a>よりお問い合わせください。'},
+        {image: 'act_tel.png', title: '担当者からのご連絡', text: 'お問い合わせ後、3営業日以内に担当者からご連絡いたします。'},
+        {image: 'act_pop.png', title: 'ご提案', text: '現状の問題や目標に合わせたプランをこちらからご提案させていただきます。'},
+        {image: 'act_gear.png', title: '運用開始', text: '初期設定を行い、その後運用代行を開始いたします。'}
+    ];
+    var review = [
+        {image: 'cv-example_1.png', category: '某飲食業界', position: 'left' ,icon:'cv-arrow_left2.png' ,text: '自社で運用をしていたが社内リソースが足りず、運用をお願いしました。<br>お客様となりうるアカウントに対して定期的にアプローチして頂いており、<br>徐々にフォロワー数が伸び始めました！'},
+        {image: 'cv-example_2.png', category: '美容師', position: 'right' ,icon:'cv-arrow_right2.png', text: '今までは自分で投稿をしたりいいねやフォローを行っていたんですが、個人で運用しているので、あまり投稿する時間もなく、効果も感じられなかったので、運用代行をお願いしました。 単純な代行作業ではなく、ご提案も頂けるのでとても助かっています！'}
+    ];
+    var reviewlist = [
+    ['予約投稿10件', 'いいね上限100件/リプライ上限50件', 'キーワードフォロー1日上限50件'],
+    ['予約投稿50件', 'エリア設定', 'キーワードフォロー1日上限150件', '投稿代行', 'ターゲットアカウントフォロー', 'ブースト', 'いいね上限200件/リプライ上限100件', '自動リツイート', '除外ワード設定'],
+    ]
+    var course = [
+        {price: '4,900', plan: 'ベーシック', class: 'p-basic', tweet: '10', follow: '50'},
+        {price: '8,900', plan: 'スタンダード', class: 'p-standard', tweet: '30', follow: '150'},
+        {price: '24,000', plan: 'プレミアム', class: 'p-premium', tweet: '50', follow: '150'}
+    ]
+    var plan = [
+        ['契約期間制限無し', '解約金無し', '予約投稿（10投稿/月）', 'キーワードフォロー（上限50件/日）', 'ターゲットアカウントフォロー', 'いいね上限200回/日', 'リプライ上限100回/日', '除外ワード設定', 'エリア設定', 'ブースト', '自動リツイート'],
+        ['契約期間制限無し', '解約金無し', '予約投稿（30投稿/月）', 'キーワードフォロー（上限150件/日）', 'ターゲットアカウントフォロー', 'いいね上限200回/日', 'リプライ上限100回/日', '除外ワード設定', 'エリア設定', 'ブースト', '自動リツイート'],
+        ['契約期間制限無し', '解約金無し', '予約投稿（50投稿/月）', 'キーワードフォロー（上限150件/日）', 'ターゲットアカウントフォロー', 'いいね上限200回/日', 'リプライ上限100回/日', '除外ワード設定', 'エリア設定', 'ブースト', '自動リツイート'],
+    ]
+    var flow = [
+        {number: '01', title: 'お問い合わせ', text: 'お問い合わせフォームからご連絡ください'},
+        {number: '02', title: 'お支払い方法のご案内', text: '弊社からお支払いに関するご連絡をいたします。'},
+        {number: '03', title: '運用初期設定', text: '貴社Twitterアカウントをサポートする為の初期設定を弊社で行います。'},
+        {number: '04', title: '運用代行開始', text: 'ご要望に応じて運用を代行いたします。'},
+    ]
+%>
+<% include ./template/_header.ejs %>
+<header class="l-header">
+    <div class="l-header__inner">
+        <a href="#top" class="l-header__link p-scroll">
+            <img src="../images/logo.png" alt="" class="l-header__logo">
+        </a>
+        <nav class="l-header__nav--pc">
+            <ul class="l-header__menu--pc">
+                <% link.forEach(function(i){ %>
+                    <li class="l-header__list--pc">
+                        <a href="<%= i.href %>" class="l-header__link--pc p-scroll"><%= i.title %></a>
+                    </li>
+                <% }) %>
+            </ul>
+        </nav>
+        <nav class="l-header__nav--sp">
+            <img src="../images/logo_slide.png" alt="ロゴ" class="l-header__logo--sp">
+            <ul class="l-header__menu--sp">
+                <% link.forEach(function(i){ %>
+                    <a href="<%= i.href %>" class="l-header__link--sp p-scroll">
+                        <li class="l-header__list--sp"><%= i.title %></li>
+                    </a>
+                <% }) %>
+            </ul>
+        </nav>
+        <div class="p-hamburger is-open">
+            <div class="p-hamburger__top"></div>
+            <div class="p-hamburger__middle"></div>
+            <div class="p-hamburger__bottom"></div>
+        </div>
+    </div>
+</header>
+<main id='top' class="l-main">
+    <div class="p-top">
+        <div class="p-top__back">
+            <div class="p-top__inner">
+                <div class="p-catch">
+                    <p class="p-catch__top">運用しているのに効果が出ていないなら<br>その作業時間・・・</p>
+                    <p class="p-catch__middle">もったいなく<br>ないですか？</p>
+                    <p class="p-catch__bottom">Tweeticsがアカウント運用をサポートします！</p>
+                    <a href="#contact" class="p-catch__button p-scroll">まずは無料相談！</a>
+                </div>
+                <div class="p-top__images">
+                    <div class="p-top__phone">
+                        <img src="../images/phone.png" alt="スマホ画像" class="p-top__image">
+                    </div>
+                    <img src="../images/emblem.png" alt="SNSエキスパート" class="p-top__emblem">
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="hearing" class="p-hearing">
+        <div class="p-hearing__wrap">
+            <h1 class="p-hearing__title">Twitterアカウント運用で<br class="u-hidden">こんなお悩みありませんか？</h1>
+            <div class="p-hearing__inner">
+                <div class="p-hearing__item">
+                    <div class="p-hearing__pop">
+                        <p class="p-hearing__text">Twitter運用のリソースがない</p>
+                        <img src="../images/ope-arrow_left2.png" alt="吹き出し" class="p-hearing__arrow--pc p-left">
+                        <img src="../images/ope-arrow_sp2.png" alt="吹き出し" class="p-hearing__arrow--sp">
+                    </div>
+                </div>
+                <div class="p-hearing__item">
+                    <div class="p-hearing__pop">
+                        <p class="p-hearing__text">運用はしているけど効果が出ない</p>
+                        <img src="../images/ope-arrow_center2.png" alt="吹き出し" class="p-hearing__arrow--pc p-center">
+                        <img src="../images/ope-arrow_sp2.png" alt="吹き出し" class="p-hearing__arrow--sp">
+                    </div>
+                </div>
+                <div class="p-hearing__item">
+                    <div class="p-hearing__pop">
+                        <p class="p-hearing__text">アカウントは開設できているが<br>運用できていない</p>
+                        <img src="../images/ope-arrow_right2.png" alt="吹き出し" class="p-hearing__arrow--pc p-right">
+                        <img src="../images/ope-arrow_sp2.png" alt="吹き出し" class="p-hearing__arrow--sp">
+                    </div>
+                </div>
+                <img src="../images/operation.png" alt="アイコン" class="p-hearing__logo">
+            </div>
+        </div>
+    </section>
+    <section id="suggest" class="p-suggest">
+        <div class="p-suggest__wrap">
+            <div class="p-suggest__inner">
+                <p class="p-suggest__top">Twitterアカウントの<br class="u-hidden">運用でお困りなら、</p>
+                <p class="p-suggest__bottom">弊社のアカウント<br class="u-hidden">運用のプロに<br class="u-hidden">お任せください</p>
+            </div>
+        </div>
+    </section>
+    <section id="intro" class="p-intro">
+        <div class="p-intro__wrap">
+            <div class="p-intro__inner">
+                <div class="p-intro__description">
+                    <img src="../images/emblem.png" alt="SNSエキスパート" class="p-intro__emblem">
+                    <p class="p-intro__top">Twitterマーケティングのプロが<br>運用代行させていただきます</p>
+                    <p class="p-intro__bottom">
+                        Twitterを含むSNSはユーザー数やアクティブ率の高さから、企業のマーケティング活動や、<br>
+                        個人のブランディング活動などに欠かせないツールとなっていきます。<br>
+                        特にTwitterは気軽なコミュニケーションを取れるSNSなので、定期的なアクションが重要です。<br>
+                        その一方、運用には手間と時間がかかってしまうので工数の負担が大きく運用が滞ってしまう<br>
+                        傾向にあります。<br>
+                        弊社ではTwitterアカウント運用に必要な定期アクションを揃えた独自システムを開発して<br>
+                        おりますので、ご要望に応じて運用改善を代行いたします。
+                    </p>
+                </div>
+                <img src="../images/intro_phone.png" alt="スマホの画像" class="p-intro__image">
+            </div>
+        </div>
+    </section>
+    <section id="solution" class="p-solution">
+        <div class="p-solution__wrap">
+            <h1 class="p-solution__title">解決できること</h1>
+            <div class="p-solution__inner">
+                <% solution.forEach(function(i){ %>
+                    <div class="p-solution__item">
+                        <img src="../images/<%= i.image %>" alt="ソリューションアイコン" class="p-solution__icon">
+                        <p class="p-solution__top"><%= i.title %></p>
+                        <p class="p-solution__middle"><%= i.effect %></p>
+                        <p class="p-solution__bottom"><%- i.text %></p>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+    <section id="process" class="p-process">
+        <div class="p-process__wrap">
+            <h1 class="p-process__title">運用代行の流れ</h1>
+            <div class="p-process__inner">
+                <ul class="p-process__list">
+                    <% process.forEach(function(i){ %>
+                        <li class="p-process__item">
+                            <img src="../images/<%= i.image %>" alt="アイコン" class="p-process__icon">
+                            <div class="p-process__description">
+                                <h2 class="p-process__top"><%= i.title %></h2>
+                                <p class="p-process__bottom"><%- i.text %></p>
+                            </div>
+                            <img src="../images/acting-arrow_center2.png" alt="吹き出し" class="p-process__pop--pc">
+                            <img src="../images/acting-arrow_sp2.png" alt="吹き出し" class="p-process__pop--sp">
+                        </li>
+                    <% }) %>
+                </ul>
+                <a href="#contact" class="p-process__button p-scroll">お問い合わせはこちら</a>
+            </div>
+        </div>
+    </section>
+    <section id="review" class="p-review">
+        <div class="p-review__wrap">
+            <div class="p-review__title">お客様の声</div>
+            <div class="p-review__inner">
+                <ul class="p-review__list">
+                    <% for(var i = 0; i <= review.length - 1; i++){ %>
+                        <li class="p-review__item">
+                            <img src="../images/<%= review[i].image %>" alt="レビュー画像" class="p-review__image">
+                            <div class="p-review__contents">
+                                <h2 class="p-review__top"><%= review[i].category %>のお客様</h2>
+                                <p class="p-review__bottom"><%- review[i].text %></p>
+                                <div class="p-service">
+                                    <h3 class="p-service__title">ご提供サービス内容</h3>
+                                    <div class="p-service__wrap">
+                                        <ul class="p-service__list">
+                                            <% for(var f = 0; f <= reviewlist[i].length - 1; f++){ %>
+                                                <li class="p-service__item">
+                                                    <div class="u-dot"></div>
+                                                    <p class="p-service__text"><%= reviewlist[i][f] %></p>
+                                                </li>
+                                            <% } %>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <img src="../images/<%= review[i].icon %>" alt="吹き出し" class="p-review__arrow p-review__<%= review[i].position %>">
+                            </div>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="course" class="p-course">
+        <div class="p-course__wrap">
+            <h1 class="p-course__title">料金プラン</h1>
+            <div class="p-course__inner">
+                <ul class="p-plan">
+                    <% for(var i = 0; i <= course.length - 1; i++){ %>
+                        <li class="p-plan__menu <%= course[i].class %>">
+                            <div class="p-price ">
+                                <h2 class="p-price__title"><%= course[i].plan %>プラン</h2>
+                                <p class="p-price__text">月額費用</p>
+                                <p class="p-price__price"><span class="p-price__big"><%= course[i].price %></span>円</p>
+                            </div>
+                            <ul class="p-plan__wrap">
+                                <% for(var f = 0; f <= plan[i].length - 1; f++){ %>
+                                <li class="p-plan__list">
+                                    <p class="p-plan__text"><%= plan[i][f] %></p>
+                                </li>
+                                <% } %>
+                            </ul>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+            <p class="p-course__text">まずはお気軽にお問い合わせください</p>
+            <a href="#contact" class="p-course__button p-scroll">今すぐ問い合わせる</a>
+        </div>
+    </section>
+    <section id="flow" class="p-flow">
+        <div class="p-flow__wrap">
+            <h1 class="p-flow__title">ご利用の流れ</h1>
+            <ul class="p-flow__inner">
+                <% flow.forEach(function(i){ %>
+                    <li class="p-flow__list">
+                        <h2 class="p-flow__number"><%= i.number %></h2>
+                        <p class="p-flow__top"><%= i.title %></p>
+                        <p class="p-flow__bottom"><%= i.text %></p>
+                    </li>
+                    <img src="../images/flow_tri.png" alt="矢印" class="p-flow__arrow">
+                <% }) %>
+            </ul>
+        </div>
+    </section>
+    <section id="contact" class="p-contact">
+        <div class="p-contact__wrap">
+            <h1 class="p-contact__title">お問い合わせ</h1>
+            <h1 class="p-contact__title--check">入力内容確認</h1>
+            <div class="p-contact__inner">
+                <form action="index.php" name="contact" method="POST" class="p-form">
+                    <div class="p-form__inner">
+                        <ul class="p-form__list">
+                            <li class="p-form__item is-error" data-error="20文字以下でご入力ください。">
+                                <p class="p-form__title">お名前</p>
+                                <input type="text" class="p-form__input is-required" name="name" placeholder="田中 太郎" required>
+                            </li>
+                            <li class="p-form__item">
+                                <p class="p-form__title">会社名（任意）</p>
+                                <input type="text" class="p-form__input" name="company" placeholder="株式会社FAM">
+                            </li>
+                            <li class="p-form__item">
+                                <p class="p-form__title">営業担当者 (任意)</p>
+                                <input type="text" class="p-form__input" name="manager" placeholder="田中 太郎">
+                            </li>
+                            <li class="p-form__item">
+                                <p class="p-form__title">紹介ID (任意)</p>
+                                <input type="text" name="id" class="p-form__input">
+                            </li>
+                            <li class="p-form__item is-error" data-error="プランを選択してください">
+                                <p class="p-form__title">希望プラン</p>
+                                <select type="text" class="p-form__select  is-required" name="select" required>
+                                    <option value="" hidden>選択してください</option>
+                                    <option value="ベーシックプラン(¥4,900)">ベーシックプラン(¥4,900)</option>
+                                    <option value="スタンダードプラン(¥8,900)">スタンダードプラン(¥8,900)</option>
+                                    <option value="プレミアムプラン(¥24,000)">プレミアムプラン(¥24,000)</option>
+                                    <option value="お問い合わせ">お問い合わせ</option>
+                                </select>
+                            </li>
+                            <li class="p-form__item is-error" data-error="正しくメールアドレスをご入力ください。">
+                                <p class="p-form__title">メールアドレス</p>
+                                <input type="text" class="p-form__input is-required" name="address" placeholder="sample@fam.js" required>
+                            </li>
+                            <li class="p-form__item is-error" data-error="正しく電話番号をご入力ください。">
+                                <p class="p-form__title">電話番号</p>
+                                <input type="text" class="p-form__input is-required" name="number" placeholder="000-0000-0000" required>
+                            </li>
+                            <li class="p-form__item is-error" data-error="500文字以内でご入力ください。">
+                                <p class="p-form__title">お問い合わせ内容</p>
+                                <textarea cols="30" rows="10" class="p-form__textarea is-required" name="inquiry" placeholder="お問い合わせ内容はこちらにご記入ください。" required></textarea>
+                            </li>
+                            <li class="p-form__item">
+                                <p class="p-form__title">利用規約</p>
+                                <div class="p-form__Terms">
+                                    <p>
+                                        この利用規約（以下、「本規約」といいます。）は、株式会社FAM（以下、「当社」といいます。）が提供する「Tweetics」という名称のサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。本サービスを利用する利用者の皆さま（以下、「ユーザー」といいます。）には、本規約に従って、本サービスをご利用いただきます。
+                                        第1条（適用）
+                                        本規約は、ユーザーと当社との間の本サービスの利用に関わる一切の関係に適用されるものとします。
+                                        そのドメインが「Tweetics」である本サービスのウェブサイト（以下、「本ウェブサイト」といいます。）において当社が随時掲載する本サービスに関するルール、諸規定等は、本規約の一部を構成するものとします。
+                                        第2条（利用登録）
+                                        利用希望者が当社の定める方法によって利用登録を申請し、当社がこれを承認することによって、利用登録が完了するものとします。
+                                        当社は、利用登録の申請者に以下の事由があると判断した場合、利用登録の申請を承認しないことがあり、その理由については一切の開示義務を負わないものとします。
+                                        （1）利用登録の申請に際して虚偽の事項を届け出た場合
+                                        （2）本規約に違反したことがある者からの申請である場合
+                                        （3）本規約に違反するおそれがあると当社が判断した場合
+                                        （4）未成年者、成年被後見人、被保佐人または被補助人のいずれかであり、法定代理人、後見人、保佐人または補助人の同意等を得ていなかった場合
+                                        （5）反社会的勢力等（暴力団、暴力団員、右翼団体、反社会的勢力、その他これに準ずる者を意味します。以下同じ。）である、または資金提供その他を通じて反社会的勢力等の維持、運営もしくは経営に協力もしくは関与する等反社会的勢力との何らかの交流もしくは関与を行っていると当社が判断した場合
+                                        （6）その他、当社が利用登録を相当でないと判断した場合
+                                        第3条（利用料金および支払方法）
+                                        ユーザーは、本サービス利用の対価として、当社が別途定め、本ウェブサイトに表示する利用料金を、当社が指定する方法により支払うものとします。
+                                        ユーザーが利用料金の支払を遅滞した場合には、本サービスの利用をユーザーの承認を得ずに停止できるものとします。
+                                        ユーザーが利用期間の途中で解約をした場合その他理由の如何を問わず、当社はユーザーから支払を受けた利用料金を返還する義務を負わないものとします。
+                                        第4条（禁止事項）
+                                        ユーザーは、本サービスの利用にあたり、以下の行為をしてはなりません。
+                                        （1）法令または公序良俗に違反する行為
+                                        （2）犯罪行為に関連する行為
+                                        （3）当社のサーバーまたはネットワークの機能を破壊したり、妨害したりする行為
+                                        （4）当社のサービスの運営を妨害するおそれのある行為
+                                        （5）他のユーザーに関する個人情報等を収集または蓄積する行為
+                                        （6）他のユーザーに成りすます行為
+                                        （7）当社のサービスに関連して、反社会的勢力等に対して直接または間接に利益を供与する行為
+                                        （8）当社、または本サービスの他の利用者その他第三者の知的財産権、肖像権、プライバシー、名誉その他の権利または利益を侵害する行為
+                                        （9）過度に暴力的な表現、露骨な性的表現、人種、国籍、信条、性別、社会的身分、門地等による差別につながる表現、自殺、自傷行為、薬物乱用を誘引または助長する表現、その他反社会的な内容を含み他人に不快感を与える表現を、投稿または送信する行為
+                                        （10）営業、宣伝、広告、勧誘、その他営利を目的とする行為（当社の認めたものを除きます。）、性行為やわいせつな行為を目的とする行為、面識のない異性との出会いや交際を目的とする行為、他のお客様に対する嫌がらせや誹謗中傷を目的とする行為、その他本サービスが予定している利用目的と異なる目的で本サービスを利用する行為
+                                        （11）宗教活動または宗教団体への勧誘行為
+                                        （12）Twitter その他本サービスと連携するサービス（以下、「連携サービス」といいます。）の利用規約等の連携サービスの利用に関する規則・ルールに違反する行為
+                                        （13）その他、当社が不適切と判断する行為
+                                        第5条（本サービスの提供の停止等）
+                                        当社は、以下のいずれかの事由があると判断した場合、ユーザーに事前に通知することなく本サービスの全部または一部の提供を停止または中断することができるものとします。
+                                        （1）本サービスにかかるコンピュータシステムの保守点検または更新を行う場合
+                                        （2）地震、落雷、火災、停電または天災などの不可抗力により、本サービスの提供が困難となった場合
+                                        （3）コンピュータまたは通信回線等が事故により停止した場合
+                                        （3）ユーザーが本サービスの利用料金の支払を怠った場合
+                                        （4）Twitter その他の連携サービスに、トラブル、サービス提供の中断または停止、本サービスとの連携の停止、仕様変更等が生じた場合
+                                        （5）本サービスの運用上、技術上またはユーザーの利便のため一時的な本サービスの提供の中断または停止が必要と当社が判断した場合
+                                        （6）その他、当社が本サービスの提供が困難と判断した場合
+                                        当社は、本サービスの提供の停止または中断により、ユーザーまたは第三者が被ったいかなる不利益または損害について、理由を問わず一切の責任を負わないものとします。また、ユーザーは、当社が本条に基づき本サービスの提供の停止または中断をした場合においても利用料金の減額等を請求できないことを認識し、了承するものとします。
+                                        第6条（著作権）
+                                        ユーザーは、自ら著作権等の必要な知的財産権を有するか、または必要な権利者の許諾を得た文章、画像や映像等の情報のみ、本サービスを利用し、投稿または編集することができるものとします。
+                                        ユーザーが本サービスを利用して投稿または編集した文章、画像、映像その他のデータ（以下、「投稿データ」といいます。）の著作権については、当該ユーザーその他既存の権利者に留保されるものとします。ただし、当社は、本サービスを利用して投稿または編集された文章、画像、映像等を利用（複製、複写、改変、第三者への再許諾その他のあらゆる利用を含みます。）できるものとし、ユーザーは、この利用に関して、著作者人格権を行使しないものとします。
+                                        前項本文の定めるものを除き、本サービスおよび本サービスに関連する一切の情報についての著作権およびその他知的財産権はすべて当社または当社にその利用を許諾した権利者に帰属し、ユーザーは無断で複製、譲渡、貸与、翻訳、改変、転載、公衆送信（送信可能化を含みます。）、伝送、配布、出版、営業使用、逆アセンブル、逆コンパイル、リバースエンジニアリング等をしてはならないものとします。
+                                        第7条（利用制限および登録抹消）
+                                        当社は、以下の場合には、事前の通知なく、利用データを削除し、ユーザーに対して本サービスの全部もしくは一部の利用を制限しまたはユーザーとしての登録を抹消することができるものとします。
+                                        （1）本規約のいずれかの条項に違反した場合
+                                        （2）登録事項に虚偽の事実があることが判明した場合
+                                        （3）当社、他のユーザーその他の第三者に損害を生じさせるおそれのある目的または方法で本サービスを利用した、または利用しようとした場合
+                                        （4）手段の如何を問わず、本サービスの運営を妨害した場合
+                                        （5）自ら振出し、もしくは引受けた手形もしくは小切手につき、不渡りの処分を受けた場合、または手形交換所の取引停止処分その他これに類する措置を受けたとき
+                                        （6）差押、仮差押、仮処分、強制執行または競売の申立てがあった場合、または租税公課の滞納処分を受けた場合
+                                        （7）支払停止もしくは支払不能となり、または破産、民事再生、会社更生または特別清算の手続開始決定等の申立がなされたとき
+                                        （8）1年間以上本サービスの利用がない場合
+                                        （9）当社からの問い合わせその他の回答を求める連絡に対して30日間以上応答がない場合
+                                        （10）第2条第2項各号に該当する場合
+                                        （11）その他、当社が本サービスの利用を適当でないと判断した場合
+                                        前項各号のいずれかに該当した場合、ユーザーは、当然に当社に対する一切の債務について期限の利益を失い、その時点において負担する一切の債務を直ちに一括して弁済しなければなりません。
+                                        当社は、本条に基づき当社が行った行為によりユーザーに生じた損害について、一切の責任を負いません。
+                                        第8条（ユーザーによる解約）
+                                        ユーザーは、当社所定の方法で当社に通知することにより、本サービスを解約することができます。 解約にあたり、当社に対して負っている債務がある場合は、ユーザーは、当社に対して負っている債務の一切について当然に期限の利益を失い、直ちに当社に対して全ての債務の支払を行わなければなりません。 当社は、ユーザーによる解約後にユーザーの承諾を得ることなくユーザー情報を消去することができるものとします。
+                                        第9条（保証の否認および免責事項）
+                                        当社は、本サービスに事実上または法律上の瑕疵（安全性、信頼性、正確性、完全性、有効性、特定の目的への適合性、セキュリティなどに関する欠陥、エラーやバグ、権利侵害などを含みます。）がないことを明示的にも黙示的にも保証しておりません。
+                                        当社は、本サービスに起因してユーザーに生じたあらゆる損害について一切の責任を負いません。ただし、本サービスに関する当社とユーザーとの間の契約（本規約を含みます。）が消費者契約法に定める消費者契約となる場合、この免責規定は適用されません。
+                                        前項ただし書に定める場合であっても、当社は、当社の過失（重過失を除きます。）による債務不履行または不法行為によりユーザーに生じた損害のうち特別な事情から生じた損害（当社またはユーザーが損害発生につき予見し、または予見し得た場合を含みます。）について一切の責任を負いません。また、当社の過失（重過失を除きます。）による債務不履行または不法行為によりユーザーに生じた損害の賠償は、ユーザーから当該損害が発生した月に受領した利用料の額を上限とします。
+                                        当社は、本サービスに関して、ユーザーと他のユーザーまたは第三者との間において生じた取引、連絡または紛争等について一切責任を負いません。
+                                        ユーザーは連携サービスの利用に関する規則・ルールを自己の費用と責任で遵守するものとし、ユーザーと当該連携サービスを運営する第三者との間で紛争等が生じた場合でも、当社は当該紛争等について一切の責任を負いません。
+                                        第10条（サービス内容の変更等）
+                                        当社は、ユーザーに通知することなく、本サービスの内容を変更または本サービスの提供を中止することができるものとし、これによってユーザーに生じた損害について一切の責任を負いません。
+                                        第11条（利用規約の変更）
+                                        当社は、必要と判断した場合には、いつでも本規約を変更することができるものとします。
+                                        当社は、本規約を変更した場合には、ユーザーに当該変更内容を通知又は公表（本ウェブサイトに掲載する方法を含みます。）するものとし、当該変更内容の通知又は公表後、ユーザーが本サービスを利用した場合または当社の定める期間内に解約の手続をとらなかった場合には、ユーザーは、本規約の変更に同意したものとみなします。
+                                        第12条（通知または連絡）
+                                        ユーザーと当社との間の通知または連絡は、当社の定める方法によって行うものとします。
+                                        第13条（権利義務の譲渡の禁止）
+                                        ユーザーは、当社の書面による事前の承諾なく、利用契約上の地位または本規約に基づく権利もしくは義務を第三者に譲渡し、または担保に供することはできません。
+                                        当社は、本サービスにかかる事業を第三者に譲渡（事業譲渡、会社分割その他態様の如何を問わないものとします。）した場合には、当該譲渡に伴い本規約に基づく契約上の地位、本規約に基づく権利および義務ならびにユーザーの登録情報その他の顧客情報を当該譲渡の譲受人に譲渡することができるものとし、ユーザーは、かかる譲渡につき本項において予め同意したものとします。
+                                        第14条（準拠法・裁判管轄）
+                                        本規約の解釈にあたっては、日本法を準拠法とします。
+                                        本サービスに関して紛争が生じた場合には、東京地方裁判所を専属的合意管轄とします。
+                                        以上
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>   
+                        <div class="p-check">
+                            <label>
+                                <input type="checkbox" class="p-check__checkBox" required>
+                                <p class="p-check__text">同意する</p>
+                            </label>
+                        </div>
+                        <button type="button" id="btn" class="p-form__button">確認画面へ</button>
+                    </div>
+                    <div class="p-formCheck">
+                        <ul class="p-formCheck__list">
+                            <li class="p-formCheck__item">
+                                <p class="p-formCheck__title">お名前</p>
+                                <div class="p-formCheck__text p-formCheck__name"></div>
+                            </li>
+                            <li class="p-formCheck__item">
+                                <p class="p-formCheck__title">会社名（任意）</p>
+                                <div class="p-formCheck__text p-formCheck__company"></div>
+                            </li>
+                            <li class="p-formCheck__item">
+                                <p class="p-formCheck__title">営業担当者 (任意)</p>
+                                <div class="p-formCheck__text p-formCheck__manager"></div>
+                            </li>
+                            <li class="p-formCheck__item">
+                                <p class="p-formCheck__title">紹介ID (任意)</p>
+                                <div class="p-formCheck__text p-formCheck__id"></div>
+                            </li>
+                            <li class="p-formCheck__item">
+                                <p class="p-formCheck__title">希望プラン</p>
+                                <div class="p-formCheck__text p-formCheck__select"></div>
+                            </li>
+                            <li class="p-formCheck__item">
+                                <p class="p-formCheck__title">メールアドレス</p>
+                                <div class="p-formCheck__text p-formCheck__address"></div>
+                            </li>
+                            <li class="p-formCheck__item">
+                                <p class="p-formCheck__title">電話番号</p>
+                                <div class="p-formCheck__text p-formCheck__number"></div>
+                            </li>
+                            <li class="p-formCheck__item">
+                                <p class="p-formCheck__title">お問い合わせ内容</p>
+                                <div class="p-formCheck__text p-formCheck__inquiry"></div>
+                            </li>
+                        </ul>
+                        <div class="p-formCheck__buttons">
+                            <button type="button" class="p-formCheck__return">入力画面に戻る</button>
+                            <button class="p-formCheck__submit">送信する</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="l-footer">
+    <a href="#top" class="p-scroll">
+        <img src="../images/logo.png" alt="ロゴ" class="l-footer__logo">
+    </a>
+    <a href="https://www.fam-t.co.jp/" class="l-footer__link" target="_blank">運営会社<img src="../images/icon_link.png" alt="リンクへ" class="l-footer__icon"></a>
+    <p class="l-footer__copyright">&copy; 2020 FAM All rights reserved.</p>
+</footer>
+<% include ./template/_footer.ejs %>
+
