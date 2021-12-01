@@ -1,0 +1,206 @@
+@import "variable";
+
+@media screen and (max-width: 768px) {
+    .p-course__wrap {
+        @include contentsSP;
+        color: #fff;
+    }
+    .p-course__title {
+        @include titleSP;
+    }
+    .p-course__inner {
+        @include innerSP;
+        margin-top: 30px;
+        color: #000;
+    }
+    .p-basic {
+        @include plan($size: 12px);
+    }
+    .p-plan__list:nth-child(n + 5) {
+        @include visited;
+    }
+    .p-standard {
+        @include plan($color: #10b0d6, $size: 12px);
+    }
+    .p-plan__list:nth-child(n + 10) {
+        @include visited;
+    }
+    .p-premium {
+        @include plan($color: #f94691, $size: 12px);
+    }
+    .p-plan__menu {
+        & + .p-plan__menu {
+            margin-top: 20px;
+        }
+    }
+    .p-price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 180px;
+        color: #fff;
+    }
+    .p-price__title {
+        font-size: 20px;
+    }
+    .p-price__text {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    .p-price__big {
+        font-size: 45px;
+        line-height: 50px;
+        vertical-align: center;
+    }
+    .p-plan__wrap {
+        padding: 30px 0;
+        border: 1px solid;
+        border-color: transparent #ddd #ddd #ddd;
+    }
+    .p-plan__list {
+        width: 240px;
+        margin: 0 auto;
+        & + .p-plan__list {
+            margin-top: 15px;
+        }
+    }
+    .p-course__text {
+        display: block;
+        position: relative;
+        width: 250px;
+        margin: 30px auto 0;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        color: #000;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-left: 1px solid #000;
+            transform: rotate(-22deg);
+        }
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -5px;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            border-right: 1px solid #000;
+            transform: rotate(22deg);
+        }
+    }
+    .p-course__button {
+        @include btn($width: 215px, $padding: 17px 0, $size: 16px);
+        margin-top: 20px;
+        letter-spacing: $space * 2;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .p-course__wrap {
+        @include contents;
+        color: #fff;
+    }
+    .p-course__title {
+        @include title;
+    }
+    .p-course__inner {
+        @include inner;
+        margin-top: 80px;
+    }
+    .p-plan {
+        display: flex;
+    }
+    .p-basic {
+        @include plan(#39c4c2);
+    }
+    .p-plan__list:nth-child(n + 5) {
+        @include visited;
+    }
+    .p-standard {
+        @include plan(#10b0d6);
+    }
+    .p-plan__list:nth-child(n + 10) {
+        @include visited;
+    }
+    .p-premium {
+        @include plan(#f94691);
+    }
+    .p-price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 320px;
+        height: 180px;
+        color: #fff;
+    }
+    .p-price__title {
+        font-size: 20px;
+    }
+    .p-price__text {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    .p-price__big {
+        font-size: 50px;
+        line-height: 50px;
+        vertical-align: center;
+    }
+    .p-plan__wrap {
+        padding: 35px 0;
+        border: 1px solid;
+        border-color: transparent #ddd #ddd #ddd;
+    }
+    .p-plan__list {
+        padding-left: 20px;
+        color: #000;
+        & + .p-plan__list {
+            margin-top: 25px;
+        }
+    }
+    .p-course__text {
+        display: block;
+        position: relative;
+        width: 350px;
+        margin: 70px auto 0;
+        font-size: 19px;
+        font-weight: 600;
+        text-align: center;
+        color: #000;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-left: 1px solid #000;
+            transform: rotate(-22deg);
+        }
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            border-right: 1px solid #000;
+            transform: rotate(22deg);
+        }
+    }
+    .p-course__button {
+        @include btn($width: 250px, $padding: 20px 0);
+        margin-top: 25px;
+    }
+}

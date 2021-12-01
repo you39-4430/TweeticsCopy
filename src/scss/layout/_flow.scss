@@ -1,0 +1,102 @@
+@import "variable";
+
+@media screen and (max-width: 768px) {
+    .p-flow__wrap {
+        @include contentsSP($mainColorSp);
+    }
+    .p-flow__title {
+        @include titleSP(#fff);
+    }
+    .p-flow__inner {
+        @include innerSP;
+        margin-top: 30px;
+    }
+    .p-flow__list {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+        background-color: #fff;
+        &:nth-of-type(n + 2) {
+            margin-top: 10px;
+        }
+    }
+    .p-flow__number {
+        margin-top: 25px;
+        font-family: Arial;
+        font-size: 40px;
+        font-weight: 500;
+        color: #10b0d6;
+    }
+    .p-flow__top {
+        width: 130px;
+        font-weight: 600;
+        font-size: 18px;
+        text-align: center;
+    }
+    .p-flow__bottom {
+        margin-top: 5px;
+        width: 150px;
+        font-size: 12px;
+    }
+    .p-flow__arrow {
+        display: block;
+        width: 20px;
+        margin: 10px auto 0;
+        transform: rotate(90deg);
+        &:last-child {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .p-flow__wrap {
+        @include contents($mainColor);
+    }
+    .p-flow__title {
+        @include title(#fff);
+    }
+    .p-flow__inner {
+        @include inner;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .p-flow__list {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 200px;
+        height: 200px;
+        background-color: #fff;
+        border-radius: 50%;
+    }
+    .p-flow__number {
+        margin-top: 25px;
+        font-family: Arial;
+        font-size: 40px;
+        font-weight: 500;
+        color: #10b0d6;
+    }
+    .p-flow__top {
+        width: 130px;
+        font-weight: 600;
+        font-size: 18px;
+        text-align: center;
+    }
+    .p-flow__bottom {
+        margin-top: 5px;
+        width: 150px;
+        font-size: 12px;
+    }
+    .p-flow__arrow {
+        width: 20px;
+        &:last-child {
+            display: none;
+        }
+    }
+}

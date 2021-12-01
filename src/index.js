@@ -11,9 +11,9 @@ $(function () {
 
     $('.is-required').on("keyup change blur", function () {
         if ($(this).val() == '') {
-            $(this).parent('.is-error').addClass('open')
+            $(this).parent('.is-error').addClass('error-open')
         } else {
-            $(this).parent('.is-error').removeClass('open')
+            $(this).parent('.is-error').removeClass('error-open')
         }
     });
 
@@ -23,15 +23,15 @@ $(function () {
             var hyphen = tel.split('-');
             var hyphenLen = hyphen.length;
             if (hyphenLen === 1 && (!tel.match(/^0.*/) || tel.match(/[0-9]{10,11}/g) != tel)) {
-                $('.p-form__input[name="number"]').parent('.is-error').addClass('open');
+                $('.p-form__input[name="number"]').parent('.is-error').addClass('error-open');
             }
             if (!document.contact.address.value.match(/.+@.+\..+/)) {
-                $('.p-form__input[name="address"]').parent('.is-error').addClass('open');
+                $('.p-form__input[name="address"]').parent('.is-error').addClass('error-open');
             }
             if ($(this).val() == "") {
-                $(this).parent('.is-error').addClass('open');
+                $(this).parent('.is-error').addClass('error-open');
             } else {
-                $(this).parent('.is-error').removeClass('open')
+                $(this).parent('.is-error').removeClass('error-open')
             }
         });
     });

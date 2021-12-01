@@ -1,0 +1,62 @@
+@import "variable";
+
+@media screen and (max-width: 768px) {
+    .p-intro__wrap {
+        @include contentsSP;
+    }
+    .p-intro__inner {
+        @include innerSP;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .p-intro__image {
+        width: 210px;
+    }
+    .p-intro__emblem {
+        display: block;
+        width: 100px;
+        margin: 30px auto 0;
+    }
+    .p-intro__top {
+        margin-top: 20px;
+        font-size: 17px;
+        letter-spacing: $space;
+        line-height: 30px;
+        font-weight: 600;
+        text-align: center;
+    }
+    .p-intro__bottom {
+        margin-top: 15px;
+        font-size: 13px;
+        line-height: 23px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .p-intro__wrap {
+        @include contents;
+    }
+    .p-intro__inner {
+        @include inner;
+        display: flex;
+        justify-content: space-between;
+    }
+    .p-intro__description {
+        width: 650px;
+    }
+    .p-intro__emblem {
+        width: 103px;
+        margin-top: 20px;
+    }
+    .p-intro__top {
+        margin-top: 10px;
+        font-size: 36px;
+        font-weight: 600;
+    }
+    .p-intro__bottom {
+        margin-top: 10px;
+        font-size: 15px;
+        line-height: 28px;
+    }
+}

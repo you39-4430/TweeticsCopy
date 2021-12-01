@@ -1,0 +1,66 @@
+@import "variable";
+
+@media screen and (max-width: 768px) {
+    .p-suggest__wrap {
+        @include contentsSP($mainColorSp);
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0;
+            transform: translateX(-50%);
+            display: block;
+            border-top: 29px solid #fff;
+            border-left: 57px solid transparent;
+            border-right: 57px solid transparent;
+        }
+    }
+    .p-suggest__inner {
+        @include innerSP;
+        font-weight: 600;
+        color: #fff;
+        text-align: center;
+    }
+    .p-suggest__top {
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+    .p-suggest__bottom {
+        margin-top: 15px;
+        font-size: 29px;
+        line-height: 38px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .p-suggest__wrap {
+        @include contents($mainColor);
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            border-top: 38px solid #fff;
+            border-right: 73px solid transparent;
+            border-left: 73px solid transparent;
+        }
+    }
+    .p-suggest__inner {
+        @include inner;
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+    }
+    .p-suggest__top {
+        font-size: 33px;
+        letter-spacing: 3px;
+    }
+    .p-suggest__bottom {
+        font-size: 45px;
+    }
+}

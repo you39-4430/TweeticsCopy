@@ -55,12 +55,12 @@ $mainColorSp: radial-gradient(farthest-side ellipse at left bottom, #3fc7c0 40%,
     letter-spacing: 0.84px;
 }
 
-@mixin plan($color) {
+@mixin plan($color:#39c4c2 , $size: 14px) {
     .p-price{
         background-color: $color;
     }
     .p-plan__text {
-        font-size: 14px;
+        font-size: $size;
         font-weight: 600;
         &::before {
             content: "";

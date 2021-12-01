@@ -1,0 +1,121 @@
+@import "variable";
+
+@media screen and (max-width: 768px) {
+    .p-top {
+        background: radial-gradient(farthest-side ellipse at left bottom, #3fc7c0 40%, #00a9de);
+    }
+    .p-top__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 70px;
+        background-image: url(../images/hero-back_sp.png);
+        background-position: center 34px;
+        background-repeat: no-repeat;
+    }
+    .p-catch {
+        text-align: center;
+        color: #fff;
+        font-weight: 600;
+    }
+    .p-catch__top {
+        font-size: 15px;
+    }
+    .p-catch__middle {
+        font-size: 36px;
+        line-height: 43px;
+        letter-spacing: $space;
+    }
+    .p-catch__bottom {
+        margin-top: 10px;
+        font-size: 11px;
+        letter-spacing: $space;
+    }
+    .p-catch__button {
+        @include btn($width: 140px, $size: 12px, $padding: 11px);
+        margin-top: 15px;
+        letter-spacing: $space;
+    }
+    .p-top__images {
+        position: relative;
+        height: 272px;
+        padding-left: 43px;
+        margin-top: 20px;
+    }
+    .p-top__phone {
+        max-width: 380px;
+        overflow: hidden;
+        height: 100%;
+    }
+    .p-top__image {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .p-top__emblem {
+        position: absolute;
+        bottom: -9%;
+        right: 8%;
+        width: 93px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .p-top {
+        height: 663px;
+        padding-top: 60px;
+        background: $mainColor;
+    }
+    .p-top__back {
+        display: flex;
+        justify-content: center;
+        background-image: url(../images/hero-back_pc.png);
+        background-repeat: no-repeat;
+        background-position: top;
+    }
+    .p-top__inner {
+        display: flex;
+        justify-content: space-between;
+        min-width: 1280px;
+        height: 100%;
+        padding: 115px 160px 0;
+    }
+    .p-catch {
+        width: 490px;
+        color: #fff;
+        font-weight: bold;
+    }
+    .p-catch__top {
+        font-size: 24px;
+        line-height: 35px;
+        letter-spacing: 2px;
+    }
+    .p-catch__bottom {
+        margin-top: 53px;
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+    .p-catch__middle {
+        margin-top: 10px;
+        font-size: 74px;
+        line-height: 84px;
+        letter-spacing: 7px;
+    }
+    .p-catch__button {
+        @include btn();
+        margin-top: 20px;
+    }
+    .p-top__images {
+        position: relative;
+        width: 380px;
+    }
+    .p-top__image {
+        width: 350px;
+    }
+    .p-top__emblem {
+        position: absolute;
+        bottom: -30px;
+        right: -20px;
+        width: 215px;
+    }
+}

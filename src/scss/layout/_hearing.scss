@@ -1,0 +1,116 @@
+@import "variable";
+
+@media screen and (max-width: 768px) {
+    .p-hearing__wrap {
+        @include contentsSP;
+    }
+    .p-hearing__title {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: $space;
+    }
+    .p-hearing__inner {
+        @include innerSP;
+        margin-top: 40px;
+    }
+    .p-hearing__logo {
+        display: block;
+        width: 140px;
+        margin: 25px auto 0;
+    }
+    .p-hearing__item {
+        padding: 0 15px;
+        & + .p-hearing__item {
+            margin-top: 25px;
+        }
+    }
+    .p-hearing__pop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 15px 0;
+        border: 3px solid #3ec7c0;
+        border-radius: 4px;
+    }
+    .p-hearing__arrow--pc {
+        display: none;
+    }
+    .p-hearing__arrow--sp {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 12px);
+        width: 28px;
+    }
+    .p-hearing__text {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .p-hearing__wrap {
+        @include contents;
+    }
+    .p-hearing__title {
+        font-size: 34px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .p-hearing__inner {
+        @include inner;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+    .p-hearing__logo {
+        display: block;
+        width: 240px;
+        margin: 50px auto 0;
+    }
+    .p-hearing__item {
+        position: relative;
+        &:nth-child(odd) {
+            top: 91px;
+        }
+    }
+    .p-hearing__pop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 294px;
+        height: 90px;
+        padding: 0 20px;
+        border: 4px solid #3ec7c0;
+        border-radius: 4px;
+    }
+    .p-hearing__text {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .p-hearing__arrow--pc {
+        position: absolute;
+        width: 41px;
+        transform: translateY(100%);
+    }
+    .p-hearing__arrow--sp {
+        display: none;
+    }
+    .p-left {
+        right: 20px;
+        bottom: 3px;
+    }
+    .p-center {
+        bottom: 0px;
+    }
+    .p-right {
+        left: 20px;
+        bottom: 3px;
+    }
+}

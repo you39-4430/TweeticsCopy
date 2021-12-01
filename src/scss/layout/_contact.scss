@@ -1,0 +1,332 @@
+@import "variable";
+
+@media screen and (max-width: 768px) {
+    .p-contact__wrap {
+        @include contentsSP;
+    }
+    .p-contact__title {
+        @include titleSP;
+    }
+    .p-contact__title--check {
+        @include titleSP;
+        display: none;
+    }
+    .p-contact__inner {
+        @include innerSP;
+        display: flex;
+        justify-content: center;
+    }
+    .p-form {
+        width: 100%;
+        margin-top: 30px;
+    }
+    .p-form__item {
+        position: relative;
+        margin-top: 30px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    .p-form__input {
+        width: 100%;
+        margin-top: 10px;
+        padding: 13px 15px;
+        outline: none;
+        border: none;
+        background-color: #f3f3f3;
+    }
+    .p-form__select {
+        width: 100%;
+        margin-top: 10px;
+        padding: 12px 15px;
+        border: none;
+        background-color: #f3f3f3;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        &::-ms-expand {
+            display: none;
+        }
+    }
+    .p-form__title {
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .p-form__textarea {
+        width: 100%;
+        height: 120px;
+        margin-top: 10px;
+        padding: 10px 15px;
+        border: none;
+        background-color: #f3f3f3;
+        resize: none;
+        outline: none;
+    }
+    .p-form__Terms {
+        height: 120px;
+        margin-top: 10px;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        overflow-y: scroll;
+        font-size: 10px;
+    }
+    .error-open {
+        & .p-form__input,
+        & .p-form__select,
+        & .p-form__textarea {
+            border: 1px solid #f94691;
+        }
+        &::before {
+            content: attr(data-error);
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            color: #f94691;
+            font-size: 14px;
+        }
+    }
+    .p-check__checkBox {
+        display: none;
+        &:checked + .p-check__text::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 7px;
+            left: 2px;
+            width: 11px;
+            height: 4px;
+            border-left: 2px solid #f94691;
+            border-bottom: 2px solid #f94691;
+            transform: rotate(-45deg);
+        }
+    }
+    .p-check {
+        width: 90px;
+        margin: 20px auto 0;
+    }
+    .p-check__text {
+        position: relative;
+        text-align: right;
+        line-height: 16px;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #000;
+        }
+    }
+    .p-form__button {
+        @include btn($width: 215px, $padding: 15px 0, $size: 16px);
+        margin-top: 20px;
+        border: none;
+    }
+    .p-formCheck {
+        display: none;
+    }
+    .p-formCheck__item {
+        margin-top: 30px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    .p-formCheck__title {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: $space;
+    }
+    .p-formCheck__text {
+        background-color: #f3f3f3;
+        height: 40px;
+        margin-top: 10px;
+        padding: 13px 15px;
+        font-size: 12px;
+    }
+    .p-formCheck__inquiry {
+        height: 120px;
+    }
+    .p-formCheck__buttons {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 30px;
+    }
+    .p-formCheck__return {
+        @include btn($width: 215px, $size: 16px, $color: #535353);
+        margin-top: 20px;
+        border: none;
+    }
+    .p-formCheck__submit {
+        @include btn($width: 215px, $size: 16px);
+        border: none;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .p-contact__wrap {
+        @include contents;
+    }
+    .p-contact__title {
+        @include title;
+    }
+    .p-contact__title--check {
+        @include title;
+        display: none;
+    }
+    .p-contact__inner {
+        @include inner;
+        display: flex;
+        justify-content: center;
+    }
+    .p-form {
+        margin-top: 60px;
+        width: 640px;
+    }
+    .p-form__item {
+        position: relative;
+        margin-top: 30px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    .p-form__input {
+        width: 100%;
+        margin-top: 10px;
+        padding: 12px 15px;
+        outline: none;
+        border: none;
+        background-color: #f3f3f3;
+    }
+    .p-form__select {
+        width: 100%;
+        margin-top: 10px;
+        padding: 12px 15px;
+        border: none;
+        background-color: #f3f3f3;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        &::-ms-expand {
+            display: none;
+        }
+    }
+    .p-form__title {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .p-form__textarea {
+        width: 100%;
+        height: 170px;
+        margin-top: 10px;
+        padding: 10px 15px;
+        border: none;
+        background-color: #f3f3f3;
+        resize: none;
+        outline: none;
+    }
+    .p-form__Terms {
+        height: 120px;
+        margin-top: 10px;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        overflow-y: scroll;
+        font-size: 10px;
+    }
+    .error-open {
+        & .p-form__input,
+        & .p-form__select,
+        & .p-form__textarea {
+            border: 1px solid #f94691;
+        }
+        &::before {
+            content: attr(data-error);
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            color: #f94691;
+            font-size: 14px;
+        }
+    }
+    .p-check__checkBox {
+        display: none;
+        &:checked + .p-check__text::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 7px;
+            left: 2px;
+            width: 11px;
+            height: 4px;
+            border-left: 2px solid #f94691;
+            border-bottom: 2px solid #f94691;
+            transform: rotate(-45deg);
+        }
+    }
+    .p-check {
+        width: 90px;
+        margin: 20px auto 0;
+    }
+    .p-check__text {
+        position: relative;
+        text-align: right;
+        line-height: 16px;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+            width: 15px;
+            height: 15px;
+            border: 1px solid #000;
+        }
+    }
+    .p-form__button {
+        @include btn($width: 250px, $padding: 20px 0);
+        margin-top: 40px;
+        border: none;
+    }
+    .p-formCheck {
+        display: none;
+    }
+    .p-formCheck__item {
+        margin-top: 30px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    .p-formCheck__title {
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: $space;
+    }
+    .p-formCheck__text {
+        width: 100%;
+        height: 42px;
+        margin-top: 10px;
+        padding: 13px 15px;
+        background-color: #f3f3f3;
+        font-size: 14px;
+    }
+    .p-formCheck__inquiry {
+        height: 170px;
+    }
+    .p-formCheck__buttons {
+        display: flex;
+        margin-top: 50px;
+    }
+    .p-formCheck__return {
+        @include btn($width: 250px, $padding: 20px 0, $color: #535353);
+        border: none;
+    }
+    .p-formCheck__submit {
+        @include btn($width: 250px, $padding: 20px 0);
+        border: none;
+    }
+}
